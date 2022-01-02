@@ -46,7 +46,7 @@ async def kopiuj(ctx):
     wow = await client.create_guild(f'Klon-{ctx.guild.name}')
     await asyncio.sleep(4)
     for g in client.guilds:
-        if f'backup-{ctx.guild.name}' in g.name:
+        if f'Klon-{ctx.guild.name}' in g.name:
             for c in g.channels:
                 await c.delete()
             for cate in ctx.guild.categories:
@@ -61,7 +61,7 @@ async def kopiuj(ctx):
         if role.name != "@everyone":
             try:
                 await wow.create_role(name=role.name, color=role.color, permissions=role.permissions, hoist=role.hoist, mentionable=role.mentionable)
-                print(f' Stworzono rolę : {role.name}')
+                print(f'Stworzono rolę : {role.name}')
             except:
                 break
 
